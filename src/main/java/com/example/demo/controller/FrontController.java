@@ -13,6 +13,11 @@ public class FrontController {
         return "homePage";
     }
 
+    @GetMapping("/logmein")
+    public String loginPage() {
+        return "loginPage";
+    }
+
     @GetMapping("/bye")
     @ResponseBody
     public ResponseEntity<String> bye() {

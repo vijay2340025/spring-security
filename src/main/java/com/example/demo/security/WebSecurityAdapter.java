@@ -28,11 +28,12 @@ public class WebSecurityAdapter extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**/home", "/**/bye").permitAll()
+                .antMatchers("/**/home", "/**/bye").authenticated()
                 .antMatchers("/**/hello/**").authenticated()
+                .antMatchers("/**/logmein/**").permitAll()
                 .and()
                 .httpBasic()
                 .and()
-                .formLogin();
+                .formLogin().loginPage("/rpc/logmein");
     }
 }
