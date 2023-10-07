@@ -15,7 +15,11 @@ public class WebSecurityAdapter extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication()
                 .passwordEncoder(passwordEncoder)
                 .withUser("root")
-                .password("$2a$10$LgLj2ABBpg8i..nWL2Qig.5pg/qp98rtcD4.jcinCPLWn3FfGnNbS")
-                .roles("admin");
+                .password("$2a$10$LgLj2ABBpg8i..nWL2Qig.5pg/qp98rtcD4.jcinCPLWn3FfGnNbS") // welcome
+                .roles("admin")
+                .and()
+                .withUser("vijay")
+                .password("$2a$10$1KAm2HioOXUED.PHimLATevUF1MXSAP2sea.aD9uNc4pgkuVTIBkG") // vijay
+                .roles("user");
     }
 }
